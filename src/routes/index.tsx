@@ -90,10 +90,10 @@ export default function Home() {
               Sindicato profissional Attue
             </div>
             <h1 className="mt-7 max-w-3xl text-5xl font-black leading-[1.03] tracking-tight sm:text-6xl lg:text-7xl">
-              Representatividade profissional começa com união.
+              Sua voz ganha força quando a categoria caminha junta.
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-8 text-slate-300">
-              A {institution.name} representa, orienta e aproxima profissionais, transformando participação coletiva em caminhos mais fortes para toda a categoria.
+              O {institution.name} representa os profissionais da categoria: defende interesses coletivos, orienta sobre direitos e abre espaço para a participação nas decisões que afetam a vida profissional de cada associado.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
