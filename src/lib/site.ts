@@ -1,7 +1,7 @@
 export const institution = {
-  name: "[NOME DO SINDICATO]",
-  category: "[CATEGORIA]",
-  location: "[LOCALIZAÇÃO]",
+  name: "Attue",
+  category: "trabalhadores e profissionais representados",
+  location: "sua categoria profissional",
   description:
     "Uma instituição criada para representar, orientar e aproximar os profissionais da categoria.",
 };
