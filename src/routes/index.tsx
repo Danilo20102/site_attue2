@@ -87,13 +87,13 @@ export default function Home() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-gold">
               <span className="h-2 w-2 rounded-full bg-gold" />
-              Representação que aproxima
+              Sindicato profissional Attue
             </div>
             <h1 className="mt-7 max-w-3xl text-5xl font-black leading-[1.03] tracking-tight sm:text-6xl lg:text-7xl">
-              Sindicato Attue: a força coletiva de quem faz acontecer.
+              Uma categoria mais forte começa com união.
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-8 text-slate-300">
-              A {institution.name} trabalha para representar, orientar e valorizar profissionais, construindo caminhos mais fortes para toda a categoria.
+              A {institution.name} representa, orienta e aproxima profissionais, transformando participação coletiva em caminhos mais fortes para toda a categoria.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
