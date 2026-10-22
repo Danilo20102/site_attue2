@@ -1,20 +1,25 @@
-# site_attue2
+# Site institucional do sindicato
 
-Landing page inicial da Attue, construída com React, TypeScript, Vite e Tailwind CSS.
+Site institucional responsivo desenvolvido com React, TypeScript, Vite, Tailwind CSS e React Router.
 
-## Desenvolvimento
+## Conteúdo
 
-Instale as dependências e inicie o servidor de desenvolvimento:
+A aplicação contém páginas para:
 
-```bash
-npm install
-npm run dev
-```
+- Início
+- Sobre o sindicato
+- Serviços e benefícios
+- Associação sindical
+- Notícias e comunicados
+- Documentos e convenções
+- Agenda e eventos
+- Perguntas frequentes
+- Contato
+- Privacidade
+- Termos de uso
 
-Para gerar a versão de produção:
+Os campos institucionais ainda não fornecidos estão identificados com marcadores para preenchimento posterior. Notícias, eventos e documentos não são inventados e exibem estados vazios até que existam conteúdos oficiais.
 
-```bash
-npm run build
-```
+## Dados e formulários
 
-A página inicial está em `src/App.tsx`, os estilos globais em `src/index.css` e os componentes reutilizáveis em `src/components/ui`.
+O schema public informado está vazio. Por isso, os formulários foram estruturados visualmente e com validação local, mas não simulam envio nem gravam dados em tabelas inexistentes. A integração persistente deve ser conectada quando as tabelas e colunas oficiais forem definidas.

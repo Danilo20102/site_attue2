@@ -1,0 +1,7 @@
+import { CalendarDays, Megaphone } from "lucide-react";
+import { PageIntro, EmptyState } from "@/components/SiteLayout";
+import { officialContentNotice } from "@/lib/site";
+
+export default function Noticias() {
+  return <><PageIntro eyebrow="Informação" title="Notícias e comunicados" description="Acompanhe as publicações oficiais, posicionamentos e comunicados do sindicato." /><div className="container-page py-16 sm:py-20"><div className="mb-8 flex flex-wrap gap-3"><button className="rounded-full bg-ink px-4 py-2 text-sm font-bold text-white">Todos</button><button className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-600">Comunicados</button><button className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-600">Institucional</button></div><EmptyState title="Ainda não há publicações cadastradas" description={officialContentNotice} /><div className="mt-8 grid gap-4 sm:grid-cols-2"><div className="flex gap-3 rounded-xl border border-slate-200 bg-white p-5 text-sm text-slate-600"><Megaphone className="shrink-0 text-gold" size={20} />Novos comunicados aparecerão nesta área.</div><div className="flex gap-3 rounded-xl border border-slate-200 bg-white p-5 text-sm text-slate-600"><CalendarDays className="shrink-0 text-gold" size={20} />As datas de publicação serão exibidas quando disponíveis.</div></div></div></>;
+}

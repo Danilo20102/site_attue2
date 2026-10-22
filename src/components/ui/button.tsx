@@ -1,39 +1,19 @@
 import type { ButtonHTMLAttributes } from "react";
 
-type ButtonVariant = "primary" | "secondary" | "outline";
-type ButtonSize = "sm" | "md" | "lg";
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "primary" | "secondary" | "outline";
+}
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: ButtonVariant;
-  size?: ButtonSize;
-};
+export function Button({ className = "", variant = "primary", ...props }: ButtonProps) {
+  const styles = {
+    primary: "bg-ink text-white hover:bg-slate-800",
+    secondary: "bg-gold text-ink hover:bg-amber-400",
+    outline: "border border-slate-300 bg-white text-ink hover:border-ink hover:bg-slate-50",
+  };
 
-const variants: Record<ButtonVariant, string> = {
-  primary:
-    "bg-primary text-primary-foreground hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/10",
-  secondary:
-    "bg-accent text-accent-foreground hover:-translate-y-0.5 hover:bg-accent/90 hover:shadow-lg hover:shadow-accent/20",
-  outline:
-    "border border-primary/20 bg-transparent text-primary hover:-translate-y-0.5 hover:border-primary/50 hover:bg-primary/5",
-};
-
-const sizes: Record<ButtonSize, string> = {
-  sm: "h-9 px-4 text-xs",
-  md: "h-11 px-5 text-sm",
-  lg: "h-14 px-7 text-sm",
-};
-
-export function Button({
-  className = "",
-  variant = "primary",
-  size = "md",
-  type = "button",
-  ...props
-}: ButtonProps) {
   return (
     <button
-      type={type}
-      className={`inline-flex items-center justify-center rounded-full font-semibold transition-[transform,box-shadow,background-color,border-color] duration-200 disabled:pointer-events-none disabled:opacity-50 ${variants[variant]} ${sizes[size]} ${className}`}
+      className={`inline-flex min-h-11 items-center justify-center rounded-xl px-5 text-sm font-bold transition-colors disabled:cursor-not-allowed disabled:opacity-50 ${styles[variant]} ${className}`}
       {...props}
     />
   );
