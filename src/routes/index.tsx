@@ -36,23 +36,23 @@ const highlights = [
 const services = [
   {
     icon: Scale,
-    title: "Orientação profissional",
-    text: "Acesse informações para compreender seus direitos e encontrar os melhores caminhos para cada situação.",
+    title: "Orientação aos associados",
+    text: "Conteúdo provisório: detalhes sobre o atendimento e a orientação oferecidos serão publicados após validação oficial.",
   },
   {
     icon: FileText,
-    title: "Documentos e informações",
-    text: "Consulte comunicados, publicações e documentos oficiais organizados em um só lugar.",
+    title: "Documentos e comunicados",
+    text: "Conteúdo provisório: os documentos oficiais da Attue serão disponibilizados nesta área.",
   },
   {
     icon: MessageCircle,
     title: "Canais de atendimento",
-    text: "Fale com o sindicato e encontre os canais institucionais disponíveis para sua solicitação.",
+    text: "Encontre os canais institucionais disponíveis para falar com a Attue. Telefone e e-mail oficiais ainda serão informados.",
   },
   {
     icon: BriefcaseBusiness,
-    title: "Benefícios da associação",
-    text: "Conheça as vantagens de fazer parte de uma rede que trabalha pela valorização da categoria.",
+    title: "Benefícios confirmados",
+    text: "Conteúdo provisório: os benefícios da associação serão apresentados somente após confirmação do sindicato.",
   },
 ];
 
@@ -61,19 +61,19 @@ const news = [
     icon: Megaphone,
     tag: "Comunicados",
     title: "Informações oficiais da Attue",
-    text: "Acompanhe os próximos comunicados e posicionamentos institucionais do sindicato.",
+    text: "Conteúdo provisório: os comunicados e posicionamentos institucionais serão publicados após validação.",
   },
   {
     icon: BookOpen,
     tag: "Publicações",
     title: "Conteúdos para a categoria",
-    text: "Materiais e orientações serão publicados nesta área conforme forem validados.",
+    text: "Materiais e orientações serão disponibilizados nesta área conforme forem oficialmente aprovados.",
   },
   {
     icon: Users,
     tag: "Participação",
     title: "Agenda e atividades",
-    text: "Fique por dentro das assembleias, encontros e iniciativas promovidas pela Attue.",
+    text: "Conteúdo provisório: assembleias, encontros e demais atividades serão divulgados nesta área.",
   },
 ];
 
@@ -90,23 +90,23 @@ export default function Home() {
               Sindicato profissional Attue
             </div>
             <h1 className="mt-7 max-w-3xl text-5xl font-black leading-[1.03] tracking-tight sm:text-6xl lg:text-7xl">
-              Uma categoria mais forte começa com união.
+              Representatividade profissional começa com união.
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-8 text-slate-300">
               A {institution.name} representa, orienta e aproxima profissionais, transformando participação coletiva em caminhos mais fortes para toda a categoria.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                to="/associacao"
+                to="/sobre"
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-gold px-6 text-sm font-bold text-ink transition hover:bg-amber-400"
               >
-                Quero me associar <ArrowRight size={17} aria-hidden="true" />
+                Conheça a Attue <ArrowRight size={17} aria-hidden="true" />
               </Link>
               <Link
-                to="/sobre"
+                to="/contato"
                 className="inline-flex min-h-12 items-center justify-center rounded-xl border border-white/25 px-6 text-sm font-bold text-white transition hover:bg-white/10"
               >
-                Conheça a Attue
+                Entre em Contato
               </Link>
             </div>
             <div className="mt-12 flex flex-wrap gap-x-8 gap-y-3 text-sm text-slate-300">
@@ -165,44 +165,46 @@ export default function Home() {
       <section className="container-page py-24 sm:py-28">
         <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div>
-            <p className="eyebrow">Sobre a Attue</p>
+            <p className="eyebrow">Sobre Nós</p>
             <h2 className="mt-4 max-w-lg text-3xl font-black leading-tight tracking-tight text-ink sm:text-4xl">
-              Uma instituição feita para estar ao lado da categoria.
+              Uma instituição feita para representar e acolher a categoria.
             </h2>
             <p className="mt-6 max-w-lg leading-7 text-slate-600">
-              A Attue acredita que representatividade se constrói com escuta, informação e participação. Nosso compromisso é aproximar profissionais das decisões e dos assuntos que impactam sua trajetória.
+              A Attue é apresentada aqui como uma instituição dedicada à representatividade profissional, ao diálogo e à orientação. Este texto é provisório e será complementado com as informações institucionais oficiais.
             </p>
             <Link to="/sobre" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-ink transition hover:text-gold">
-              Saiba mais sobre o sindicato <ArrowRight size={16} aria-hidden="true" />
+              Conheça a história da Attue <ArrowRight size={16} aria-hidden="true" />
             </Link>
           </div>
           <div className="relative overflow-hidden rounded-[2rem] bg-sand p-8 sm:p-12">
             <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full border border-gold/30" />
-            <div className="relative grid gap-8 sm:grid-cols-2">
+            <div className="relative grid gap-8 sm:grid-cols-3">
               <div>
-                <span className="text-5xl font-black text-ink">01</span>
-                <p className="mt-3 font-bold text-ink">Propósito claro</p>
-                <p className="mt-2 text-sm leading-6 text-slate-600">Defender interesses e ampliar oportunidades para a categoria.</p>
+                <span className="text-4xl font-black text-ink">01</span>
+                <p className="mt-3 font-bold text-ink">Missão</p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">Texto provisório: representar e orientar os profissionais com clareza e proximidade.</p>
               </div>
               <div>
-                <span className="text-5xl font-black text-ink">02</span>
-                <p className="mt-3 font-bold text-ink">Presença próxima</p>
-                <p className="mt-2 text-sm leading-6 text-slate-600">Criar canais acessíveis de diálogo, orientação e participação.</p>
+                <span className="text-4xl font-black text-ink">02</span>
+                <p className="mt-3 font-bold text-ink">Objetivos</p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">Texto provisório: ampliar o acesso a informações e espaços de participação.</p>
               </div>
-              <div className="sm:col-span-2 sm:border-t sm:border-slate-900/10 sm:pt-8">
-                <p className="max-w-xl text-xl font-bold leading-8 text-ink">“Juntos, transformamos informação em participação e participação em conquistas.”</p>
+              <div>
+                <span className="text-4xl font-black text-ink">03</span>
+                <p className="mt-3 font-bold text-ink">Importância</p>
+                <p className="mt-2 text-sm leading-6 text-slate-600">A representação coletiva fortalece o diálogo sobre temas da vida profissional.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-sand py-20 sm:py-24">
+      <section id="beneficios" className="bg-sand py-20 sm:py-24">
         <div className="container-page">
           <div className="max-w-2xl">
-            <p className="eyebrow">Como podemos ajudar</p>
-            <h2 className="mt-3 text-3xl font-black tracking-tight text-ink sm:text-4xl">Serviços e benefícios para fortalecer sua jornada</h2>
-            <p className="mt-5 leading-7 text-slate-600">Encontre orientação, informação e canais pensados para tornar sua relação com o sindicato mais simples e próxima.</p>
+            <p className="eyebrow">Serviços e benefícios</p>
+            <h2 className="mt-3 text-3xl font-black tracking-tight text-ink sm:text-4xl">Orientação e informação para a categoria</h2>
+            <p className="mt-5 leading-7 text-slate-600">Conheça a estrutura de serviços prevista para a Attue. As informações específicas serão atualizadas após confirmação oficial do sindicato.</p>
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {services.map(({ icon: Icon, title, text }) => (
@@ -259,10 +261,10 @@ export default function Home() {
             <p className="mx-auto mt-5 max-w-xl leading-7 text-slate-300">Associe-se à Attue e participe de uma rede que acredita na força do diálogo, da união e da representação.</p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <Link to="/associacao" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-gold px-6 text-sm font-bold text-ink transition hover:bg-amber-400">
-                Conheça a associação <ArrowRight size={16} aria-hidden="true" />
+                Quero me Associar <ArrowRight size={16} aria-hidden="true" />
               </Link>
               <Link to="/contato" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-white/25 px-6 text-sm font-bold text-white transition hover:bg-white/10">
-                Fale conosco <MessageCircle size={16} aria-hidden="true" />
+                Entre em Contato <MessageCircle size={16} aria-hidden="true" />
               </Link>
             </div>
           </div>

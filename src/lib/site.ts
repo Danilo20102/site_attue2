@@ -8,10 +8,10 @@ export const institution = {
 
 export const navItems = [
   { label: "Início", to: "/" },
-  { label: "O sindicato", to: "/sobre" },
+  { label: "Sobre Nós", to: "/sobre" },
   { label: "Serviços", to: "/servicos" },
-  { label: "Associação", to: "/associacao" },
-  { label: "Informações", to: "/noticias" },
+  { label: "Benefícios", to: "/#beneficios" },
+  { label: "Notícias", to: "/noticias" },
   { label: "Contato", to: "/contato" },
 ];
 

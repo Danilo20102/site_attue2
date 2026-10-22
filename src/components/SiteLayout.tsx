@@ -54,8 +54,8 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
           </nav>
 
           <div className="hidden lg:block">
-            <Link to="/contato" className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-ink px-5 text-sm font-bold text-white transition hover:bg-slate-800">
-              Fale conosco <ArrowRight size={16} aria-hidden="true" />
+            <Link to="/associacao" className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-ink px-5 text-sm font-bold text-white transition hover:bg-slate-800">
+              Associe-se <ArrowRight size={16} aria-hidden="true" />
             </Link>
           </div>
 
@@ -72,6 +72,9 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
                   {item.label}
                 </NavLink>
               ))}
+              <Link to="/associacao" onClick={() => setMenuOpen(false)} className="mt-2 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-ink px-5 text-sm font-bold text-white transition hover:bg-slate-800">
+                Associe-se <ArrowRight size={16} aria-hidden="true" />
+              </Link>
             </div>
           </nav>
         )}
@@ -80,7 +83,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
       <main>{children}</main>
 
       <footer className="mt-20 border-t border-slate-200 bg-ink text-white">
-        <div className="container-page grid gap-10 py-12 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="container-page grid gap-10 py-12 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-gold"><ShieldCheck size={22} /></span>
@@ -100,9 +103,18 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
           <div>
             <p className="text-sm font-bold text-white">Atendimento</p>
             <div className="mt-4 space-y-3 text-sm leading-6 text-slate-300">
+              <p>[ENDEREÇO OFICIAL]</p>
               <p>[TELEFONE OFICIAL]</p>
               <p>[E-MAIL INSTITUCIONAL]</p>
               <p>[HORÁRIO DE ATENDIMENTO]</p>
+            </div>
+          </div>
+          <div>
+            <p className="text-sm font-bold text-white">Redes sociais</p>
+            <div className="mt-4 space-y-3 text-sm leading-6 text-slate-300">
+              <p>[REDE SOCIAL OFICIAL]</p>
+              <p>[REDE SOCIAL OFICIAL]</p>
+              <p>Informações oficiais serão disponibilizadas após validação.</p>
             </div>
           </div>
         </div>
