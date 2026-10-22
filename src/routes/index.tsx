@@ -90,7 +90,7 @@ export default function Home() {
               Representação que aproxima
             </div>
             <h1 className="mt-7 max-w-3xl text-5xl font-black leading-[1.03] tracking-tight sm:text-6xl lg:text-7xl">
-              A força coletiva de quem faz acontecer.
+              Sindicato Attue: a força coletiva de quem faz acontecer.
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-8 text-slate-300">
               A {institution.name} trabalha para representar, orientar e valorizar profissionais, construindo caminhos mais fortes para toda a categoria.
