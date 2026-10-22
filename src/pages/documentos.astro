@@ -1,0 +1,30 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageIntro from '@/components/PageIntro.astro';
+import Icon from '@/components/Icon.astro';
+---
+
+<BaseLayout
+  title="Documentos"
+  description="Biblioteca institucional da Attue. Documentos oficiais serão disponibilizados após validação."
+>
+  <PageIntro
+    eyebrow="Documentos"
+    title="Transparência em cada página."
+    description="Uma biblioteca para organizar os documentos e materiais oficiais da Attue."
+  />
+  <section class="section">
+    <div class="container empty-state">
+      <Icon name="document" size={35} />
+      <h2>A biblioteca está em preparação.</h2>
+      <p>
+        Nenhum documento oficial foi fornecido. Estatuto, editais e outros
+        arquivos serão publicados somente após validação. Não há downloads
+        fictícios nesta área.
+      </p>
+      <a href="/contato/" class="button button-dark">
+        Acessar contato <Icon name="arrow" size={18} />
+      </a>
+    </div>
+  </section>
+</BaseLayout>

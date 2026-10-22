@@ -1,0 +1,45 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageIntro from '@/components/PageIntro.astro';
+import ContentNotice from '@/components/ContentNotice.astro';
+import ServiceCard from '@/components/ServiceCard.astro';
+import { contentRepository } from '@/lib/content-repository';
+const services = await contentRepository.getServices();
+---
+
+<BaseLayout
+  title="Serviços"
+  description="Explore a estrutura de serviços da Attue. Atendimento, procedimentos e condições aguardam confirmação institucional."
+>
+  <PageIntro
+    eyebrow="Serviços"
+    title="Um caminho para cada necessidade."
+    description="Encontre a área de serviços e saiba onde consultar as informações institucionais."
+  />
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Áreas de atendimento</p>
+          <h2>
+            Como a Attue pode
+            <br />
+            estar mais perto.
+          </h2>
+          <p>
+            Os espaços abaixo estão preparados para receber a descrição dos
+            serviços oficialmente oferecidos.
+          </p>
+        </div>
+      </div>
+      <div class="services-grid page-services-grid">
+        {services.map((item, index) => (
+          <ServiceCard item={item} index={index} />
+        ))}
+      </div>
+      <div class="spaced-notice">
+        <ContentNotice text="Os títulos são exemplos de organização. Nenhum atendimento, serviço jurídico ou condição de acesso está confirmado nesta versão." />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

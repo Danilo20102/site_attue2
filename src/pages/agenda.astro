@@ -1,0 +1,29 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageIntro from '@/components/PageIntro.astro';
+import Icon from '@/components/Icon.astro';
+---
+
+<BaseLayout
+  title="Agenda"
+  description="Agenda institucional da Attue. Datas, eventos e orientações serão publicados após confirmação oficial."
+>
+  <PageIntro
+    eyebrow="Agenda"
+    title="Os próximos encontros começam aqui."
+    description="Um espaço reservado para as datas e atividades institucionais da Attue."
+  />
+  <section class="section">
+    <div class="container empty-state">
+      <Icon name="calendar" size={35} />
+      <h2>Nenhum evento confirmado.</h2>
+      <p>
+        Datas, locais e orientações de participação serão apresentados quando a
+        programação oficial for disponibilizada.
+      </p>
+      <a href="/noticias/" class="button button-dark">
+        Explorar publicações <Icon name="arrow" size={18} />
+      </a>
+    </div>
+  </section>
+</BaseLayout>

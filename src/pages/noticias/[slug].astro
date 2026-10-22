@@ -1,0 +1,56 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageIntro from '@/components/PageIntro.astro';
+import ContentNotice from '@/components/ContentNotice.astro';
+import NewsArt from '@/components/NewsArt.astro';
+import Icon from '@/components/Icon.astro';
+import { contentRepository } from '@/lib/content-repository';
+import type { NewsArticle } from '@/types/content';
+export async function getStaticPaths() {
+  const articles = await contentRepository.getNews();
+  return articles.map((article) => ({
+    params: { slug: article.slug },
+    props: { article },
+  }));
+}
+interface Props {
+  article: NewsArticle;
+}
+const { article } = Astro.props;
+---
+
+<BaseLayout
+  title={article.title}
+  description={article.excerpt}
+  noindex={article.status === 'placeholder'}
+>
+  <PageIntro
+    eyebrow={article.category}
+    title={article.title}
+    description={article.excerpt}
+  />
+  <article class="container article section">
+    <div class="article-art">
+      <NewsArt variant={article.illustration} />
+    </div>
+    {article.status === 'placeholder' && (
+      <ContentNotice text="Publicação demonstrativa. Este texto não é uma notícia nem um posicionamento oficial da Attue." />
+    )}
+    <p class="article-meta">
+      {article.category} ·{' '}
+      {article.publishedAt
+        ? new Date(article.publishedAt).toLocaleDateString('pt-BR', {
+            timeZone: 'UTC',
+          })
+        : 'Data oficial a informar'}
+    </p>
+    <div class="prose">
+      {article.paragraphs.map((paragraph) => (
+        <p>{paragraph}</p>
+      ))}
+    </div>
+    <a href="/noticias/" class="text-link">
+      Voltar para todas as publicações <Icon name="arrow" size={18} />
+    </a>
+  </article>
+</BaseLayout>

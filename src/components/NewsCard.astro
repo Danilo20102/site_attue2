@@ -1,0 +1,50 @@
+---
+import type { NewsArticle } from '@/types/content';
+import NewsArt from './NewsArt.astro';
+import Icon from './Icon.astro';
+interface Props {
+  article: NewsArticle;
+}
+const { article } = Astro.props;
+---
+
+<article
+  class="news-card"
+  data-news-card
+  data-category={article.category}
+  data-search={`${article.title} ${article.excerpt} ${article.category}`}
+>
+  <a
+    href={`/noticias/${article.slug}/`}
+    class="news-art-link"
+    aria-label={`Ler: ${article.title}`}
+    tabindex="-1"
+  >
+    <NewsArt variant={article.illustration} />
+  </a>
+  <div class="news-meta">
+    <span>{article.category}</span>
+    {article.status === 'placeholder' ? (
+      <span class="placeholder-label">Exemplo de publicação</span>
+    ) : (
+      article.publishedAt && (
+        <time datetime={article.publishedAt}>
+          {new Date(article.publishedAt).toLocaleDateString('pt-BR', {
+            timeZone: 'UTC',
+          })}
+        </time>
+      )
+    )}
+  </div>
+  <h3>
+    <a href={`/noticias/${article.slug}/`}>{article.title}</a>
+  </h3>
+  <p>{article.excerpt}</p>
+  <a
+    class="text-link"
+    href={`/noticias/${article.slug}/`}
+    aria-label={`Ler publicação: ${article.title}`}
+  >
+    Ler publicação <Icon name="arrow" size={18} />
+  </a>
+</article>

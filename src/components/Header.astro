@@ -1,0 +1,92 @@
+---
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import { navigation } from '@/data/institution';
+const currentPath = Astro.url.pathname;
+---
+
+<a href="#conteudo" class="skip-link">
+  Pular para o conteúdo
+</a>
+<div class="utility-bar">
+  <div class="container utility-inner">
+    <span>O coletivo nos move.</span>
+    <a href="/sobre/#conteudo-oficial">
+      Versão de apresentação <span class="status-dot"></span>
+    </a>
+  </div>
+</div>
+<header class="site-header">
+  <div class="container header-inner">
+    <Logo />
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-controls="navigation"
+      aria-expanded="false"
+      hidden
+    >
+      <span class="menu-lines" aria-hidden="true"></span>
+      <span data-menu-label>Menu</span>
+    </button>
+    <nav
+      id="navigation"
+      class="main-navigation"
+      aria-label="Navegação principal"
+    >
+      {navigation.map((item) => (
+        <a
+          href={item.href}
+          aria-current={
+            (
+              item.href === '/'
+                ? currentPath === '/'
+                : currentPath.startsWith(item.href)
+            )
+              ? 'page'
+              : undefined
+          }
+        >
+          {item.label}
+        </a>
+      ))}
+      <a href="/associacao/" class="button button-small">
+        Faça parte <Icon name="arrow" size={17} />
+      </a>
+    </nav>
+  </div>
+</header>
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+  const nav = document.querySelector<HTMLElement>('#navigation');
+  if (toggle && nav) {
+    const mobile = window.matchMedia('(max-width: 1023px)');
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      nav.dataset.collapsed = String(mobile.matches && !open);
+      const label = toggle.querySelector('[data-menu-label]');
+      if (label) label.textContent = open ? 'Fechar' : 'Menu';
+    };
+    toggle.hidden = false;
+    setOpen(false);
+    toggle.addEventListener('click', () =>
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true'),
+    );
+    mobile.addEventListener('change', () => setOpen(false));
+    nav.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && mobile.matches) {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+    document.addEventListener('click', (event) => {
+      if (
+        mobile.matches &&
+        event.target instanceof Node &&
+        !nav.contains(event.target) &&
+        !toggle.contains(event.target)
+      )
+        setOpen(false);
+    });
+  }
+</script>

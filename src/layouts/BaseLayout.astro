@@ -1,0 +1,65 @@
+---
+import '@fontsource-variable/dm-sans';
+import '@/styles/global.css';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import AssociationCTA from '@/components/AssociationCTA.astro';
+interface Props {
+  title: string;
+  description: string;
+  showCTA?: boolean;
+  noindex?: boolean;
+}
+const { title, description, showCTA = true, noindex = false } = Astro.props;
+const canonical = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site).href
+  : undefined;
+const shouldIndex =
+  import.meta.env.PUBLIC_ALLOW_INDEXING === 'true' && !noindex;
+const pageTitle = `${title} | Attue`;
+---
+
+<!doctype html>
+<html lang="pt-BR" id="topo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="robots"
+      content={shouldIndex ? 'index, follow' : 'noindex, follow'}
+    />
+    <meta name="theme-color" content="#193f35" />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Attue" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    {Astro.site && (
+      <script
+        type="application/ld+json"
+        set:html={JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'Attue',
+          url: Astro.site.href,
+        }).replace(/</g, '\u003c')}
+      />
+    )}
+  </head>
+  <body>
+    <Header />
+    <main id="conteudo" tabindex="-1">
+      <slot />
+    </main>
+    {showCTA && <AssociationCTA />}
+    <Footer />
+  </body>
+</html>

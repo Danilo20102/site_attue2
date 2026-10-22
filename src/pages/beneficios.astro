@@ -1,0 +1,41 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageIntro from '@/components/PageIntro.astro';
+import ContentNotice from '@/components/ContentNotice.astro';
+import ServiceCard from '@/components/ServiceCard.astro';
+import Icon from '@/components/Icon.astro';
+import { contentRepository } from '@/lib/content-repository';
+const benefits = await contentRepository.getBenefits();
+---
+
+<BaseLayout
+  title="Benefícios"
+  description="Área de benefícios e convênios da Attue. Informações, parceiros e condições serão publicados após confirmação oficial."
+>
+  <PageIntro
+    eyebrow="Benefícios"
+    title="Conexões que podem somar."
+    description="Um espaço dedicado a apresentar os benefícios da associação com clareza e transparência."
+  />
+  <section class="section">
+    <div class="container">
+      <ContentNotice text="Nenhum benefício, desconto ou convênio foi confirmado. Os cartões abaixo são campos reservados para as futuras informações oficiais." />
+      <div class="info-grid">
+        {benefits.map((item, index) => (
+          <ServiceCard item={item} index={index} />
+        ))}
+      </div>
+      <div class="empty-state">
+        <Icon name="heart" size={32} />
+        <h2>Os detalhes vêm com a confirmação.</h2>
+        <p>
+          Parceiros, critérios de elegibilidade, valores e condições serão
+          apresentados somente após aprovação institucional.
+        </p>
+        <a class="button button-dark" href="/associacao/">
+          Conhecer a área de associação <Icon name="arrow" size={18} />
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

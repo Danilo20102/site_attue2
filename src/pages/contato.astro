@@ -1,0 +1,53 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageIntro from '@/components/PageIntro.astro';
+import InquiryForm from '@/components/InquiryForm.astro';
+import Icon from '@/components/Icon.astro';
+import { institution } from '@/data/institution';
+const channels = [
+  { title: 'E-mail', value: institution.email, icon: 'mail' as const },
+  { title: 'Telefone', value: institution.phone, icon: 'phone' as const },
+  { title: 'Endereço', value: institution.address, icon: 'pin' as const },
+  { title: 'Atendimento', value: institution.hours, icon: 'clock' as const },
+];
+---
+
+<BaseLayout
+  title="Contato"
+  description="Área de contato da Attue. Canais oficiais em preparação e formulário demonstrativo com validação."
+  showCTA={false}
+>
+  <PageIntro
+    eyebrow="Contato"
+    title="Uma conversa pode aproximar."
+    description="Este é o espaço para encontrar os canais institucionais e falar com a Attue."
+  />
+  <section class="section">
+    <div class="container two-columns two-columns-wide">
+      <div>
+        <p class="eyebrow">Vamos conversar</p>
+        <h2>
+          Qual é a sua
+          <br />
+          próxima pergunta?
+        </h2>
+        <p class="section-copy">
+          Os canais abaixo serão preenchidos com os dados oficiais. Enquanto
+          isso, o formulário funciona em modo demonstrativo.
+        </p>
+        <ul class="contact-list">
+          {channels.map((channel) => (
+            <li>
+              <Icon name={channel.icon} size={23} />
+              <div>
+                <strong>{channel.title}</strong>
+                <span>{channel.value}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <InquiryForm kind="contact" />
+    </div>
+  </section>
+</BaseLayout>

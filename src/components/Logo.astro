@@ -1,0 +1,25 @@
+---
+interface Props {
+  inverse?: boolean;
+}
+const { inverse = false } = Astro.props;
+---
+
+<a
+  href="/"
+  class:list={['brand', { 'brand-inverse': inverse }]}
+  title="Página inicial"
+>
+  <svg class="brand-symbol" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+    <path
+      d="M4 32V19a8 8 0 0 1 16 0v13M20 32V12a8 8 0 0 1 16 0v20"
+      stroke="currentColor"
+      stroke-width="6"
+    />
+    <path d="M4 26h32" stroke="currentColor" stroke-width="6" />
+  </svg>
+  <span class="brand-word">
+    attue<span class="brand-dot">.</span>
+    <span class="brand-descriptor">Sindicato profissional</span>
+  </span>
+</a>

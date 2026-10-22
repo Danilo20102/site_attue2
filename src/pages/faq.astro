@@ -1,0 +1,47 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageIntro from '@/components/PageIntro.astro';
+const questions = [
+  [
+    'Quem pode se associar à Attue?',
+    '[REGRA OFICIAL DE ELEGIBILIDADE A INFORMAR] Os critérios serão publicados na área de associação após aprovação institucional.',
+  ],
+  [
+    'Os benefícios apresentados já estão disponíveis?',
+    'Não. Nesta versão, benefícios e convênios são campos reservados. Nenhuma oferta foi confirmada.',
+  ],
+  [
+    'O formulário envia meus dados?',
+    'Sem um canal de recebimento configurado, o formulário apenas confere os campos no seu navegador. Nenhum dado é enviado ou armazenado pela aplicação.',
+  ],
+  [
+    'Onde encontro documentos oficiais?',
+    'A biblioteca de documentos está preparada para receber materiais aprovados. Nenhum arquivo oficial foi disponibilizado nesta versão.',
+  ],
+  [
+    'Como acompanho os próximos eventos?',
+    'A área de agenda receberá datas e orientações oficiais quando forem fornecidas pela Attue.',
+  ],
+];
+---
+
+<BaseLayout
+  title="Perguntas frequentes"
+  description="Dúvidas frequentes sobre a versão de apresentação do site, associação, benefícios, formulários e documentos da Attue."
+>
+  <PageIntro
+    eyebrow="Perguntas frequentes"
+    title="Informação para seguir em frente."
+    description="Respostas sobre o site e os conteúdos que estão em preparação."
+  />
+  <section class="section">
+    <div class="container faq-list">
+      {questions.map(([question, answer]) => (
+        <details>
+          <summary>{question}</summary>
+          <p>{answer}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

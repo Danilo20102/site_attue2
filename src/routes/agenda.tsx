@@ -1,7 +1,0 @@
-import { CalendarDays, MapPin } from "lucide-react";
-import { PageIntro, EmptyState } from "@/components/SiteLayout";
-import { officialContentNotice } from "@/lib/site";
-
-export default function Agenda() {
-  return <><PageIntro eyebrow="Participação" title="Agenda e eventos" description="Acompanhe assembleias, reuniões, campanhas e outras atividades institucionais." /><div className="container-page py-16 sm:py-20"><div className="mb-8 flex flex-wrap gap-3"><button className="rounded-full bg-ink px-4 py-2 text-sm font-bold text-white">Próximos eventos</button><button className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-600">Todos</button></div><EmptyState title="A agenda ainda está vazia" description={officialContentNotice} /><div className="mt-8 grid gap-4 md:grid-cols-2"><div className="rounded-2xl border border-slate-200 bg-white p-6"><CalendarDays className="text-gold" /><h2 className="mt-5 font-bold text-ink">Datas oficiais</h2><p className="mt-2 text-sm leading-6 text-slate-600">Nenhuma data foi publicada até o momento.</p></div><div className="rounded-2xl border border-slate-200 bg-white p-6"><MapPin className="text-gold" /><h2 className="mt-5 font-bold text-ink">Locais e links</h2><p className="mt-2 text-sm leading-6 text-slate-600">As orientações de participação serão exibidas junto de cada evento oficial.</p></div></div></div></>;
-}
