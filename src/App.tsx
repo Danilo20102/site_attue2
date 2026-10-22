@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import Home from "@/routes/index";
 import Sobre from "@/routes/sobre";
 import Servicos from "@/routes/servicos";
+import Beneficios from "@/routes/beneficios";
 import Associacao from "@/routes/associacao";
 import Noticias from "@/routes/noticias";
 import Documentos from "@/routes/documentos";
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/servicos" element={<Servicos />} />
+          <Route path="/beneficios" element={<Beneficios />} />
           <Route path="/associacao" element={<Associacao />} />
           <Route path="/noticias" element={<Noticias />} />
           <Route path="/documentos" element={<Documentos />} />

@@ -10,7 +10,7 @@ export const navItems = [
   { label: "Início", to: "/" },
   { label: "Sobre Nós", to: "/sobre" },
   { label: "Serviços", to: "/servicos" },
-  { label: "Benefícios", to: "/#beneficios" },
+  { label: "Benefícios", to: "/beneficios" },
   { label: "Notícias", to: "/noticias" },
   { label: "Contato", to: "/contato" },
 ];
