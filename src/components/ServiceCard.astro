@@ -1,0 +1,26 @@
+---
+import Icon from './Icon.astro';
+import type { ContentItem } from '@/types/content';
+interface Props {
+  item: ContentItem;
+  index?: number;
+}
+const { item, index = 0 } = Astro.props;
+---
+
+<article class="service-card">
+  <div class="card-top">
+    <span class="icon-tile">
+      <Icon name={item.icon} size={27} />
+    </span>
+    <span class="card-number">0{index + 1}</span>
+  </div>
+  {item.status === 'placeholder' && (
+    <span class="placeholder-label">Conteúdo a confirmar</span>
+  )}
+  <h3>{item.title}</h3>
+  <p>{item.description}</p>
+  <a href="/contato/" class="text-link">
+    Consultar informações <Icon name="arrow" size={18} />
+  </a>
+</article>

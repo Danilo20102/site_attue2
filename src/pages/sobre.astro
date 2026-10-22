@@ -1,0 +1,86 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageIntro from '@/components/PageIntro.astro';
+import ContentNotice from '@/components/ContentNotice.astro';
+import Icon from '@/components/Icon.astro';
+import { institution } from '@/data/institution';
+const pillars = [
+  { title: 'Missão', text: institution.mission, icon: 'people' as const },
+  { title: 'Visão', text: institution.vision, icon: 'link' as const },
+  { title: 'Valores', text: institution.values, icon: 'shield' as const },
+];
+---
+
+<BaseLayout
+  title="Sobre o sindicato"
+  description="Conheça a área institucional da Attue: história, missão, visão, valores e representação. Informações oficiais em preparação."
+>
+  <PageIntro
+    eyebrow="Sobre a Attue"
+    title="Uma identidade construída em conjunto."
+    description="Um espaço para apresentar a história, as pessoas e os caminhos da Attue."
+  />
+  <section class="section">
+    <div class="container">
+      <div class="two-columns">
+        <div>
+          <p class="eyebrow">Nossa história</p>
+          <h2>
+            As pessoas
+            <br />
+            no centro.
+          </h2>
+        </div>
+        <div class="prose">
+          <p>
+            A Attue é um sindicato profissional. As informações específicas
+            sobre sua trajetória serão publicadas após validação institucional.
+          </p>
+          <p>{institution.history}</p>
+        </div>
+      </div>
+      <div class="info-grid">
+        {pillars.map((pillar) => (
+          <article class="info-card">
+            <Icon name={pillar.icon} size={28} />
+            <h2>{pillar.title}</h2>
+            <p>{pillar.text}</p>
+          </article>
+        ))}
+      </div>
+      <div class="two-columns">
+        <div>
+          <p class="eyebrow">Representação e transparência</p>
+          <h2>
+            Conhecer para
+            <br />
+            participar.
+          </h2>
+        </div>
+        <div>
+          <dl class="institution-facts">
+            <div>
+              <dt>Categoria</dt>
+              <dd>{institution.category}</dd>
+            </div>
+            <div>
+              <dt>Abrangência</dt>
+              <dd>{institution.territory}</dd>
+            </div>
+            <div>
+              <dt>Diretoria</dt>
+              <dd>[NOMES, CARGOS E MANDATOS A INFORMAR]</dd>
+            </div>
+            <div>
+              <dt>Registro</dt>
+              <dd>[DADOS CADASTRAIS OFICIAIS A INFORMAR]</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <div id="conteudo-oficial" class="spaced-notice">
+        <ContentNotice text="Esta é uma versão de apresentação. A identidade visual é uma proposta; dados institucionais, serviços, benefícios e publicações são placeholders identificados, sujeitos à aprovação da Attue." />
+      </div>
+    </div>
+  </section>
+</BaseLayout>

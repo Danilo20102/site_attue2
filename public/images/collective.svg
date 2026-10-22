@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="640" viewBox="0 0 620 640" fill="none">
+<rect width="620" height="640" rx="6" fill="#1C4439"/>
+<circle cx="490" cy="130" r="183" stroke="#719084" stroke-opacity=".4"/>
+<circle cx="490" cy="130" r="128" stroke="#719084" stroke-opacity=".4"/>
+<path d="M51 525h518M51 551h518" stroke="#719084" stroke-opacity=".4"/>
+<circle cx="166" cy="249" r="53" fill="#E4C9A3"/>
+<path d="M73 525V367a93 93 0 0 1 186 0v158" fill="#D7DCC5"/>
+<path d="M74 428h184m-184 20h184m-184 20h184m-184 20h184" stroke="#9BAE98" stroke-width="2"/>
+<circle cx="427" cy="230" r="50" fill="#E8A174"/>
+<path d="M337 525V340a90 90 0 0 1 180 0v185" fill="#F4E9D8"/>
+<path d="m337 372 180 94m-180-68 180 94m-180-68 180 94" stroke="#E0D3BD" stroke-width="2"/>
+<circle cx="299" cy="175" r="62" fill="#AD6747"/>
+<path d="M189 525V308a110 110 0 0 1 220 0v217" fill="#EE8056"/>
+<path d="M222 525V346m154 179V346" stroke="#C36441" stroke-width="2"/>
+<path d="M232 154c-3-52 20-76 67-76 40 0 67 31 65 73-28-8-44-28-52-43-14 25-46 39-80 46Z" fill="#122E28"/>
+<path d="M114 235c0-36 21-53 52-53 33 0 53 22 53 53-30 0-50-17-57-29-9 17-30 29-48 29Z" fill="#34483A"/>
+<path d="m395 177 3-16c3-17 19-25 34-21 17 4 29 24 21 42" fill="#122E28"/>
+<circle cx="74" cy="99" r="5" fill="#ED8056"/><path d="M62 99H46m28-12V71m12 28h16m-28 12v16" stroke="#ED8056" stroke-width="2"/>
+<path d="m487 337 37-37m-37 0h37v37" stroke="#EE8056" stroke-width="2"/>
+<path d="m107 573 8 8 16-16" stroke="#EAD7BC" stroke-width="2"/>
+<text x="147" y="582" fill="#F4E9D8" font-size="17" font-family="sans-serif" letter-spacing="1">A FORÇA DE ESTAR JUNTO.</text>
+</svg>

@@ -1,0 +1,22 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Icon from '@/components/Icon.astro';
+---
+
+<BaseLayout
+  title="Página não encontrada"
+  description="A página procurada não foi encontrada. Volte ao início ou explore as áreas da Attue."
+  showCTA={false}
+  noindex
+>
+  <section class="container error-page">
+    <div class="error-number" aria-hidden="true">
+      404
+    </div>
+    <h1>Este caminho ainda não existe.</h1>
+    <p>Volte ao início para encontrar o que procura.</p>
+    <a href="/" class="button button-dark">
+      Ir para o início <Icon name="arrow" size={18} />
+    </a>
+  </section>
+</BaseLayout>

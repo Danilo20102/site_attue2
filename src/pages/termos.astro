@@ -1,0 +1,38 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageIntro from '@/components/PageIntro.astro';
+import ContentNotice from '@/components/ContentNotice.astro';
+---
+
+<BaseLayout
+  title="Termos de uso"
+  description="Estrutura provisória dos termos de uso do site institucional da Attue, pendente de validação."
+  showCTA={false}
+  noindex
+>
+  <PageIntro
+    eyebrow="Termos de uso"
+    title="Uma relação transparente."
+    description="Estrutura reservada para as condições oficiais de utilização do site."
+  />
+  <article class="container section legal prose">
+    <ContentNotice text="Termos provisórios. A versão definitiva depende de aprovação institucional e revisão jurídica." />
+    <h2>Finalidade deste espaço</h2>
+    <p>
+      Esta versão apresenta a estrutura visual e funcional do site da Attue. Os
+      conteúdos demonstrativos e os dados pendentes estão identificados.
+    </p>
+    <h2>Publicações e informações oficiais</h2>
+    <p>
+      Textos marcados como exemplos não anunciam fatos, benefícios, serviços,
+      eventos ou condições de associação.
+    </p>
+    <h2>Responsabilidades e condições de uso</h2>
+    <p>
+      [INSERIR AS CONDIÇÕES OFICIAIS, RESPONSABILIDADES E REGRAS DE USO
+      APROVADAS]
+    </p>
+    <h2>Canais e atualização</h2>
+    <p>[INSERIR CANAL INSTITUCIONAL, DATA E VERSÃO DOS TERMOS]</p>
+  </article>
+</BaseLayout>

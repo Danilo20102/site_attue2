@@ -1,0 +1,47 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageIntro from '@/components/PageIntro.astro';
+import ContentNotice from '@/components/ContentNotice.astro';
+---
+
+<BaseLayout
+  title="Aviso de privacidade"
+  description="Aviso sobre a versão demonstrativa do site e campos reservados para a futura política de privacidade da Attue."
+  showCTA={false}
+  noindex
+>
+  <PageIntro
+    eyebrow="Privacidade"
+    title="Clareza também é cuidado."
+    description="Aviso da versão de apresentação. A política oficial será disponibilizada após aprovação institucional."
+  />
+  <article class="container section legal prose">
+    <ContentNotice text="Documento provisório, com campos reservados. Não constitui uma política oficial aprovada pela Attue." />
+    <h2>Funcionamento desta versão</h2>
+    <p>
+      Sem endpoints configurados, os formulários conferem dados apenas na
+      memória do navegador. A aplicação não envia, grava em banco nem salva os
+      campos em armazenamento local. Não foram adicionados cookies de análise,
+      publicidade ou rastreadores.
+    </p>
+    <p>
+      O provedor de hospedagem poderá processar registros técnicos de acesso
+      conforme sua própria configuração. Esse tratamento deverá ser descrito na
+      política definitiva.
+    </p>
+    <h2>Responsável e contato</h2>
+    <p>[RAZÃO SOCIAL, REGISTRO E CANAL OFICIAL DE PRIVACIDADE A INFORMAR]</p>
+    <h2>Finalidades e recebimento dos dados</h2>
+    <p>
+      [DESCREVER FINALIDADES, BASES LEGAIS, OPERADORES E DESTINATÁRIOS ANTES DE
+      ATIVAR O ENVIO]
+    </p>
+    <h2>Retenção e direitos</h2>
+    <p>
+      [INFORMAR PRAZOS DE RETENÇÃO, PROCEDIMENTO DE EXCLUSÃO E CANAIS PARA
+      SOLICITAÇÕES]
+    </p>
+    <h2>Versão do documento</h2>
+    <p>[DATA E VERSÃO DO TEXTO OFICIAL APROVADO A INFORMAR]</p>
+  </article>
+</BaseLayout>

@@ -1,0 +1,77 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageIntro from '@/components/PageIntro.astro';
+import ContentNotice from '@/components/ContentNotice.astro';
+import NewsCard from '@/components/NewsCard.astro';
+import Icon from '@/components/Icon.astro';
+import { contentRepository } from '@/lib/content-repository';
+const news = await contentRepository.getNews();
+const categories = ['Todas', 'Institucional', 'Comunicados', 'Participação'];
+---
+
+<BaseLayout
+  title="Notícias e comunicados"
+  description="Acompanhe a área de publicações da Attue. Busque e filtre notícias e comunicados. Exemplos identificados aguardam conteúdo oficial."
+>
+  <PageIntro
+    eyebrow="Notícias"
+    title="Informação que aproxima."
+    description="Um lugar para acompanhar publicações, comunicados e assuntos da categoria."
+  />
+  <section class="section">
+    <div class="container">
+      <div class="news-controls" data-news-controls hidden>
+        <div
+          class="filter-tabs"
+          role="group"
+          aria-label="Filtrar publicações por categoria"
+        >
+          {categories.map((category, index) => (
+            <button
+              class="filter-tab"
+              type="button"
+              data-category-filter={category}
+              aria-pressed={index === 0 ? 'true' : 'false'}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+        <label class="search-field">
+          <Icon name="search" size={19} />
+          <input
+            type="search"
+            data-news-search
+            aria-label="Buscar publicações"
+            placeholder="Buscar uma publicação…"
+          />
+        </label>
+      </div>
+      <p
+        class="results-count"
+        data-results-count
+        role="status"
+        aria-live="polite"
+      >
+        {news.length} publicações demonstrativas
+      </p>
+      <div class="news-grid">
+        {news.map((article) => (
+          <NewsCard article={article} />
+        ))}
+      </div>
+      <div class="empty-state" data-news-empty hidden>
+        <Icon name="search" size={30} />
+        <h2>Nenhuma publicação encontrada.</h2>
+        <p>Experimente outro termo ou escolha uma categoria diferente.</p>
+        <button type="button" class="button button-dark" data-clear-filters>
+          Limpar filtros
+        </button>
+      </div>
+      <div class="spaced-notice">
+        <ContentNotice text="Todas as publicações exibidas são exemplos de conteúdo. Não representam comunicados, fatos ou convocações oficiais da Attue." />
+      </div>
+    </div>
+  </section>
+  <script src="@/scripts/news.ts"></script>
+</BaseLayout>

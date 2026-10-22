@@ -1,8 +1,0 @@
-import { Download, FileText, Search } from "lucide-react";
-import { PageIntro, EmptyState } from "@/components/SiteLayout";
-import { Input } from "@/components/ui/input";
-import { officialContentNotice } from "@/lib/site";
-
-export default function Documentos() {
-  return <><PageIntro eyebrow="Transparência" title="Documentos e convenções" description="Consulte documentos oficiais publicados pelo sindicato, organizados para facilitar sua busca." /><div className="container-page py-16 sm:py-20"><div className="mb-8 grid gap-4 md:grid-cols-[1fr_auto]"><div className="relative"><Search className="absolute left-4 top-3.5 text-slate-400" size={18} /><Input className="pl-11" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" /></div><select className="min-h-11 rounded-xl border border-slate-300 bg-white px-4 text-sm text-slate-600" aria-label="Filtrar por categoria"><option>Todos os tipos</option><option>Convenções coletivas</option><option>Editais e assembleias</option><option>Estatuto social</option></select></div><EmptyState title="Nenhum documento disponível" description={officialContentNotice} /><div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6"><div className="flex gap-4"><FileText className="shrink-0 text-gold" size={26} /><div><h2 className="font-bold text-ink">Biblioteca oficial</h2><p className="mt-2 text-sm leading-6 text-slate-600">Arquivos só serão disponibilizados após validação institucional. Não há arquivos fictícios nesta biblioteca.</p><span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-slate-400"><Download size={15} />Download ficará disponível após publicação</span></div></div></div></div></>;
-}

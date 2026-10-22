@@ -1,0 +1,52 @@
+---
+import Logo from './Logo.astro';
+import { institution } from '@/data/institution';
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <Logo inverse />
+      <p>
+        Pessoas que se unem.
+        <br />
+        Vozes que transformam.
+      </p>
+      <span class="footer-note">
+        Proposta de identidade visual.
+        <br />
+        Conteúdo sujeito à aprovação institucional.
+      </span>
+    </div>
+    <div>
+      <h2>Conheça a Attue</h2>
+      <a href="/sobre/">Sobre o sindicato</a>
+      <a href="/servicos/">Serviços</a>
+      <a href="/beneficios/">Benefícios</a>
+      <a href="/associacao/">Associação</a>
+    </div>
+    <div>
+      <h2>Fique por dentro</h2>
+      <a href="/noticias/">Notícias e comunicados</a>
+      <a href="/documentos/">Documentos</a>
+      <a href="/agenda/">Agenda</a>
+      <a href="/faq/">Perguntas frequentes</a>
+    </div>
+    <div>
+      <h2>Vamos conversar</h2>
+      <p class="contact-placeholder">{institution.email}</p>
+      <p class="contact-placeholder">{institution.phone}</p>
+      <a href="/contato/" class="footer-contact">
+        Acessar contato ↗
+      </a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© {new Date().getFullYear()} Attue · Sindicato profissional</span>
+    <div>
+      <a href="/privacidade/">Privacidade</a>
+      <a href="/termos/">Termos de uso</a>
+    </div>
+    <a href="#topo">Voltar ao topo ↑</a>
+  </div>
+</footer>

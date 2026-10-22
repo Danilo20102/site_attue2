@@ -1,0 +1,150 @@
+---
+import Icon from './Icon.astro';
+interface Props {
+  kind: 'contact' | 'association';
+}
+const { kind } = Astro.props;
+const association = kind === 'association';
+const endpoint =
+  (association
+    ? import.meta.env.PUBLIC_ASSOCIATION_ENDPOINT
+    : import.meta.env.PUBLIC_CONTACT_ENDPOINT
+  )?.trim() ?? '';
+if (endpoint && new URL(endpoint).protocol !== 'https:')
+  throw new Error('Endpoints de formulário devem usar HTTPS.');
+const prefix = association ? 'association' : 'contact';
+---
+
+<div class="form-panel">
+  <h2>{association ? 'Seu primeiro passo.' : 'O diálogo começa aqui.'}</h2>
+  <p>Os campos com * são obrigatórios.</p>
+  {!endpoint && (
+    <p class="demo-notice" id={`${prefix}-notice`}>
+      <strong>Formulário demonstrativo.</strong> Você pode conferir os campos.
+      Nenhum dado será enviado ou armazenado.
+    </p>
+  )}
+  <form
+    data-inquiry-form
+    data-endpoint={endpoint}
+    data-kind={kind}
+    aria-describedby={!endpoint ? `${prefix}-notice` : undefined}
+  >
+    <div class="form-field">
+      <label for={`${prefix}-name`}>Nome completo *</label>
+      <input
+        id={`${prefix}-name`}
+        name="fullName"
+        autocomplete="name"
+        required
+        minlength="3"
+        maxlength="120"
+        placeholder="Como você se chama?"
+      />
+    </div>
+    <div class="form-field">
+      <label for={`${prefix}-email`}>E-mail *</label>
+      <input
+        id={`${prefix}-email`}
+        name="email"
+        type="email"
+        autocomplete="email"
+        required
+        maxlength="254"
+        placeholder="voce@exemplo.com"
+      />
+    </div>
+    {association ? (
+      <div class="form-field">
+        <label for={`${prefix}-phone`}>
+          Telefone <span>(opcional)</span>
+        </label>
+        <input
+          id={`${prefix}-phone`}
+          name="phone"
+          type="tel"
+          inputmode="tel"
+          autocomplete="tel"
+          pattern="[+\(\) 0-9.\-]{8,25}"
+          maxlength="25"
+          placeholder="DDD + número"
+        />
+        <p class="form-help">
+          Use de 8 a 25 caracteres: números, espaços, +, parênteses, ponto ou
+          hífen.
+        </p>
+      </div>
+    ) : (
+      <div class="form-field">
+        <label for={`${prefix}-subject`}>Assunto *</label>
+        <select id={`${prefix}-subject`} name="subject" required>
+          <option value="">Selecione um assunto</option>
+          <option value="informacoes">Informações institucionais</option>
+          <option value="associacao">Associação</option>
+          <option value="outros">Outros assuntos</option>
+        </select>
+      </div>
+    )}
+    <div class="form-field">
+      <label for={`${prefix}-message`}>
+        Mensagem {association ? <span>(opcional)</span> : '*'}
+      </label>
+      <textarea
+        id={`${prefix}-message`}
+        name="message"
+        rows="5"
+        required={!association}
+        minlength={association ? undefined : 10}
+        maxlength="3000"
+        placeholder={
+          association
+            ? 'O que você gostaria de saber sobre a associação?'
+            : 'Conte como podemos ajudar. Mínimo de 10 caracteres.'
+        }
+      ></textarea>
+    </div>
+    <div hidden aria-hidden="true">
+      <label for={`${prefix}-website`}>Deixe este campo vazio</label>
+      <input
+        id={`${prefix}-website`}
+        name="website"
+        tabindex="-1"
+        autocomplete="off"
+      />
+    </div>
+    <label class="checkbox-field">
+      <input name="privacyAcknowledged" type="checkbox" required />
+      <span>
+        Li o <a href="/privacidade/">aviso de privacidade</a> e entendo{' '}
+        {endpoint
+          ? 'a finalidade deste contato.'
+          : 'que esta é uma demonstração sem envio de dados.'}{' '}
+        *
+      </span>
+    </label>
+    <button type="submit" class="button button-dark" disabled>
+      <span data-submit-label>
+        {endpoint
+          ? association
+            ? 'Enviar interesse'
+            : 'Enviar mensagem'
+          : 'Conferir dados'}
+      </span>
+      <Icon name="arrow" size={18} />
+    </button>
+    <p
+      class="form-status"
+      data-form-status
+      role="status"
+      aria-live="polite"
+      tabindex="-1"
+    ></p>
+    <noscript>
+      <p class="demo-notice">
+        Ative o JavaScript para conferir os campos. O envio por este formulário
+        está indisponível sem JavaScript.
+      </p>
+    </noscript>
+  </form>
+</div>
+<script src="@/scripts/forms.ts"></script>

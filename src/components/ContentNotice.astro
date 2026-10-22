@@ -1,0 +1,13 @@
+---
+import Icon from './Icon.astro';
+import { contentNotice } from '@/data/institution';
+interface Props {
+  text?: string;
+}
+const { text = contentNotice } = Astro.props;
+---
+
+<aside class="content-notice">
+  <Icon name="document" size={20} />
+  <p>{text}</p>
+</aside>

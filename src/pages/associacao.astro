@@ -1,0 +1,50 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import PageIntro from '@/components/PageIntro.astro';
+import InquiryForm from '@/components/InquiryForm.astro';
+import ContentNotice from '@/components/ContentNotice.astro';
+---
+
+<BaseLayout
+  title="Associação"
+  description="Conheça a área de associação da Attue. Regras e condições aguardam confirmação oficial; formulário demonstrativo disponível."
+  showCTA={false}
+>
+  <PageIntro
+    eyebrow="Associação"
+    title="O próximo capítulo pode ter você."
+    description="Conheça os espaços preparados para orientar a associação e esclarecer os próximos passos."
+  />
+  <section class="section">
+    <div class="container two-columns two-columns-wide">
+      <div>
+        <p class="eyebrow">Faça parte</p>
+        <h2>
+          Uma construção
+          <br />
+          com muitas vozes.
+        </h2>
+        <p class="section-copy">
+          O procedimento de associação será detalhado quando as regras
+          institucionais forem disponibilizadas.
+        </p>
+        <ol class="steps" style="margin-top:35px">
+          <li>
+            <h3>Confira quem pode participar</h3>
+            <p>[CRITÉRIOS DE ELEGIBILIDADE A INFORMAR]</p>
+          </li>
+          <li>
+            <h3>Conheça as condições</h3>
+            <p>[DOCUMENTAÇÃO, CONTRIBUIÇÕES E CONDIÇÕES A INFORMAR]</p>
+          </li>
+          <li>
+            <h3>Acompanhe o procedimento</h3>
+            <p>[ETAPAS, CANAIS E PRAZOS OFICIAIS A INFORMAR]</p>
+          </li>
+        </ol>
+        <ContentNotice text="Este formulário não efetiva uma associação. Elegibilidade, valores e aprovação dependem das regras oficiais da Attue." />
+      </div>
+      <InquiryForm kind="association" />
+    </div>
+  </section>
+</BaseLayout>
